@@ -4,6 +4,7 @@
 #include <unordered_set>
 using namespace std;
 
+// A unordered set of all allowed hostnames
 static const unordered_set<string> ALLOWED_HOSTNAMES {
     "mangadex.org",
     "nhentai.net",
@@ -12,6 +13,8 @@ static const unordered_set<string> ALLOWED_HOSTNAMES {
     // Toonily redirection doesn't work manually, so I'll address it later
     // "toonily.com"
 };
+// Base string to attach the parts of the redirect URL
+static const string baseURL = "https://guya.moe/proxy/";
 
 vector<string> splitStringByDelimiter(string input, char delimiter) {
     vector<string> result = {};
@@ -31,9 +34,6 @@ vector<string> splitStringByDelimiter(string input, char delimiter) {
     return result;
 }
 string genURL(string arg) {
-    // Base string to attach the parts of the redirect URL
-    string base = "https://guya.moe/proxy/";
-
     // Remove "https://" from the argument
     string primary = arg.erase(0, 8);
     // Check to see if the hostname is supported
@@ -46,16 +46,16 @@ string genURL(string arg) {
     // Create redirect URL's based on the hostname
     if(parts[0] == "mangadex.org") {
         // Append hostname and code
-        return base + "mangadex/" + parts[2] + "/";
+        return baseURL + "mangadex/" + parts[2] + "/";
     } else if(parts[0] == "nhentai.net") {
         // Append hostname and code
-        return base + "nhentai/" + parts[2] + "/";
+        return baseURL + "nhentai/" + parts[2] + "/";
     } else if(parts[0] == "imgur.com") {
         // Append hostname, code, and chapter/page number, as Imgur links aren't considered links to a series, but a single chapter
-        return base + "imgur/" + parts[2] + "/1/1/";
+        return baseURL + "imgur/" + parts[2] + "/1/1/";
     } else if(parts[0] == "readmanhwa.com") {
         // Append hostname and title
-        return base + "readmanhwa/" + parts[3] + "/";
+        return baseURL + "readmanhwa/" + parts[3] + "/";
     }
 
     return "";
