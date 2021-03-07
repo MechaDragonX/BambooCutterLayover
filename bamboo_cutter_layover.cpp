@@ -2,10 +2,9 @@
 #include <string>
 #include <vector>
 #include <unordered_set>
-using namespace std;
 
 // A unordered set of all allowed hostnames
-static const unordered_set<string> ALLOWED_HOSTNAMES {
+static const std::unordered_set<std::string> ALLOWED_HOSTNAMES {
     "mangadex.org",
     "nhentai.net",
     "imgur.com",
@@ -14,19 +13,19 @@ static const unordered_set<string> ALLOWED_HOSTNAMES {
     // "toonily.com"
 };
 // Base string to attach the parts of the redirect URL
-static const string baseURL = "https://guya.moe/proxy/";
+static const std::string baseURL = "https://guya.moe/proxy/";
 
 /*
     Parameters: Reference to an input string, and a character to split by 
     Returns: A vector<string> that contains all the parts of the string
     Description: Takes a string, splits it by a delimiter character, and return a vector with all the parts of the string
 */
-vector<string> splitStringByDelimiter(string& input, char delimiter) {
-    vector<string> result = {};
+std::vector<std::string> splitStringByDelimiter(std::string& input, char delimiter) {
+    std::vector<std::string> result = {};
     size_t pos = 0;
-    string token;
+    std::string token;
     // Loop until the end of the string
-    while((pos = input.find(delimiter)) != string::npos) {
+    while((pos = input.find(delimiter)) != std::string::npos) {
         // Make the token the current portion
         token = input.substr(0, pos);
         // Remove blank matches
@@ -45,13 +44,13 @@ vector<string> splitStringByDelimiter(string& input, char delimiter) {
     Returns: A proxy URL
     Description: Creates a guya.moe proxy URL from the given URL to an external comic site
 */
-string genURL(string arg) {
-    if(arg.find("http://") != string::npos) {
+std::string genURL(std::string arg) {
+    if(arg.substr(0, 7) == "http://") {
         // Remove "http://" from the argument
-        string primary = arg.erase(0, 7);
-    } else if(arg.find("https://") != string::npos) {
+        std::string primary = arg.erase(0, 7);
+    } else if(arg.substr(0, 8) == "https://") {
         // Remove "https://" from the argument
-        string primary = arg.erase(0, 8);
+        std::string primary = arg.erase(0, 8);
     }
 
     // Check to see if the hostname is supported
@@ -60,7 +59,7 @@ string genURL(string arg) {
     }
 
     // Get a vector of parts of the URL
-    vector<string> parts = splitStringByDelimiter(arg, '/');
+    std::vector<std::string> parts = splitStringByDelimiter(arg, '/');
     // Create redirect URL's based on the hostname
     if(parts[0] == "mangadex.org") {
         // Append hostname and code
@@ -80,6 +79,6 @@ string genURL(string arg) {
 }
 
 int main(int argc, char** argv) {
-    cout << genURL(argv[1]) << endl;
+    std::cout << genURL(argv[1]) << std::endl;
     return 0;
 }
