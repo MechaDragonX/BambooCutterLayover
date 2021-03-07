@@ -17,7 +17,7 @@ You can either compile from source or download the latest [releases](https://git
 The program is functional but lacks some error checking and optimization. Please see the [releases page](https://github.com/MechaDragonX/BambooCutterLayover/releases) for compiled builds. Check the [issues](https://github.com/MechaDragonX/BambooCutterLayover/issues) tab for any issues.
 
 ## Coming Soon
-- [Toonily] is a site that's supported by default, [but I am unable to get the proxy to work manually](https://github.com/MechaDragonX/BambooCutterLayover/issues/1).
+- [Toonily](https://toonily.com) is a site that's supported by default, [but I am unable to get the proxy to work manually](https://github.com/MechaDragonX/BambooCutterLayover/issues/1).
 - Add support for sites the use the [FoOlSlide reader](https://foolcode.github.io/FoOlSlide/), since [guya.moe](https://guya.moe) supports them.
 
 ## What the hell is this name?
