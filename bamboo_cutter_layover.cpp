@@ -75,4 +75,5 @@ string genURL(string arg) {
 
 int main(int argc, char** argv) {
     cout << genURL(argv[1]) << endl;
+    return 0;
 }
