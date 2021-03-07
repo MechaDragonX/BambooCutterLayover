@@ -21,7 +21,7 @@ static const string baseURL = "https://guya.moe/proxy/";
     Returns: A vector<string> that contains all the parts of the string
     Description: Takes a string, splits it by a delimiter character, and return a vector with all the parts of the string
 */
-vector<string> splitStringByDelimiter(string input, char delimiter) {
+vector<string> splitStringByDelimiter(string& input, char delimiter) {
     vector<string> result = {};
     size_t pos = 0;
     string token;
