@@ -6,8 +6,19 @@ Bamboo Cutter Layover is a simple CLI program written in C++ that takes a URL fr
 ## How do I run it?
 You can either compile from source or download the latest [releases](https://github.com/MechaDragonX/BambooCutterLayover/releases). Windows users that use Windows Subsystem for Linux, Cygwin, or MSYS2 can download the Unix builds, as these builds will work natively.
 
+## What URL's are supported?
+- [mangadex.org](https://mangadex.org)
+- [nhentai.net](https://nhentai.net)
+    - This is site is designed for users above the age of 18. I am not liable if you access this site illegally, due to being a minor or laws in your region regarding its content.
+- [imgur.com](https://imgur.com)
+- [readmanhwa.com](https://readmanhwa.com)
+
 ## Is it functional?
 The program is functional but lacks some error checking and optimization. Please see the [releases page](https://github.com/MechaDragonX/BambooCutterLayover/releases) for compiled builds. Check the [issues](https://github.com/MechaDragonX/BambooCutterLayover/issues) tab for any issues.
+
+## Coming Soon
+- [Toonily] is a site that's supported by default, [but I am unable to get the proxy to work manually](https://github.com/MechaDragonX/BambooCutterLayover/issues/1).
+- Add support for sites the use the [FoOlSlide reader](https://foolcode.github.io/FoOlSlide/), since [guya.moe](https://guya.moe) supports them.
 
 ## What the hell is this name?
 The name is a reference to three things:
