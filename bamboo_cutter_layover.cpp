@@ -16,10 +16,16 @@ static const unordered_set<string> ALLOWED_HOSTNAMES {
 // Base string to attach the parts of the redirect URL
 static const string baseURL = "https://guya.moe/proxy/";
 
+/*
+    Parameters: Reference to an input string, and a character to split by 
+    Returns: A vector<string> that contains all the parts of the string
+    Description: Takes a string, splits it by a delimiter character, and return a vector with all the parts of the string
+*/
 vector<string> splitStringByDelimiter(string input, char delimiter) {
     vector<string> result = {};
     size_t pos = 0;
     string token;
+    // Loop until the end of the string
     while((pos = input.find(delimiter)) != string::npos) {
         // Make the token the current portion
         token = input.substr(0, pos);
@@ -30,9 +36,15 @@ vector<string> splitStringByDelimiter(string input, char delimiter) {
         // Remove everything looked at so far
         input.erase(0, pos + 1);
     }
+    // Append the remaing bits to the vector
     result.push_back(input);
     return result;
 }
+/*
+    Parameters: Reference to a string
+    Returns: A proxy URL
+    Description: Creates a guya.moe proxy URL from the given URL to an external comic site
+*/
 string genURL(string arg) {
     // Remove "https://" from the argument
     string primary = arg.erase(0, 8);
