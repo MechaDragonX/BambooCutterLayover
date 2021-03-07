@@ -46,8 +46,14 @@ vector<string> splitStringByDelimiter(string& input, char delimiter) {
     Description: Creates a guya.moe proxy URL from the given URL to an external comic site
 */
 string genURL(string arg) {
-    // Remove "https://" from the argument
-    string primary = arg.erase(0, 8);
+    if(arg.find("http://") != string::npos) {
+        // Remove "http://" from the argument
+        string primary = arg.erase(0, 7);
+    } else if(arg.find("https://") != string::npos) {
+        // Remove "https://" from the argument
+        string primary = arg.erase(0, 8);
+    }
+
     // Check to see if the hostname is supported
     if(ALLOWED_HOSTNAMES.find(arg.substr(0, arg.find('/'))) == ALLOWED_HOSTNAMES.end()) {
         return "That URL is not supported!";
