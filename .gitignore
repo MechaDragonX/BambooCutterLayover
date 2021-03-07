@@ -34,3 +34,6 @@
 
 # VS Code
 /.vscode
+
+# Log File
+log.txt
