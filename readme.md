@@ -4,19 +4,10 @@
 Bamboo Cutter Layover is a simple CLI program written in C++ that takes a URL from a east Asian comic aggregation site (colloquialy a "manga reader" as most of the content on those websites are Japanese comics), and redirects it to [guya.moe](https://guya.moe), a robust comic book reader that focuses on a [specific series](https://en.wikipedia.org/wiki/Kaguya-sama:_Love_Is_War), using its proxy feature.
 
 ## How do I run it?
-At the moment, you need to compile the source files to run it, as a result I can only confirm that the program works on Linux.
-```shell
-$ g++ bamboo_cutter_layover.cpp -o <output>
-$ ./<output>
-```
-### Windows
-- Windows Subsystem for Linux: Works perfectly
-- Cygwin: Should work; untested
-### macOS
-Should work; untested
+You can either compile from source or download the latest [releases](https://github.com/MechaDragonX/BambooCutterLayover/releases). Windows users that use Windows Subsystem for Linux, Cygwin, or MSYS2 can download the Unix builds, as these builds will work natively.
 
 ## Is it functional?
-The program is functional but lacks error checking and optimization. Please see the [releases page](https://github.com/MechaDragonX/Majora/releases) for compiled builds when they are available. Check the [issues](https://github.com/MechaDragonX/Bheithir/issues) tab for any issues.
+The program is functional but lacks some error checking and optimization. Please see the [releases page](https://github.com/MechaDragonX/BambooCutterLayover/releases) for compiled builds. Check the [issues](https://github.com/MechaDragonX/BambooCutterLayover/issues) tab for any issues.
 
 ## What the hell is this name?
 The name is a reference to three things:
