@@ -88,7 +88,8 @@ std::string genURL(std::string arg) {
 
     // Check to see if the hostname is supported
     if(ALLOWED_HOSTNAMES.find(arg.substr(0, arg.find('/'))) == ALLOWED_HOSTNAMES.end()) {
-        return "That URL is not supported!";
+        std::cout << "ERROR: That URL is not supported!" << std::endl;
+        exit(1);
     }
 
     // Get a vector of parts of the URL
@@ -116,7 +117,7 @@ int main(int argc, char** argv) {
         std::cout << "ERROR: That's too many arguments! You only need one argument!" << std::endl;
         return 1;
     }
-
+    
     std::ofstream outStream;
     std::ifstream inStream("log.txt");
 
