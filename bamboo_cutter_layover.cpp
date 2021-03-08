@@ -45,6 +45,11 @@ std::vector<std::string> splitStringByDelimiter(std::string& input, char delimit
     result.push_back(input);
     return result;
 }
+/*
+    Parameters: Reference to an input stream object pointing to the log file
+    Returns: Nothing
+    Description: Read the log file and populate the LOGGED_URLS map with its data
+*/
 void populateLoggedURLS(std::ifstream& inStream) {
     std::string line;
     std::vector<std::string> parts;
@@ -107,6 +112,11 @@ std::string genURL(std::string arg) {
 }
 
 int main(int argc, char** argv) {
+    if(argc > 2) {
+        std::cout << "ERROR: That's too many arguments! You only need one argument!" << std::endl;
+        return 1;
+    }
+
     std::ofstream outStream;
     std::ifstream inStream("log.txt");
 
