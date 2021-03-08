@@ -20,6 +20,7 @@ static std::unordered_map<std::string, std::string> LOGGED_URLS {};
 // Base string to attach the parts of the redirect URL
 static const std::string baseURL = "https://guya.moe/proxy/";
 
+
 /*
     Parameters: Reference to an input string, and a character to split by 
     Returns: A vector<string> that contains all the parts of the string
@@ -43,6 +44,28 @@ std::vector<std::string> splitStringByDelimiter(std::string& input, char delimit
     // Append the remaing bits to the vector
     result.push_back(input);
     return result;
+}
+void populateLoggedURLS(std::ifstream& inStream) {
+    std::string line;
+    std::vector<std::string> parts;
+
+    // While the the stream still has lines in the file to look at
+    while(!inStream.eof()) {
+        getline(inStream, line);
+        // If the current line isn't blank...
+        if(line != "") {
+            // Get the parts of the current line: original URL and proxy URL
+            parts = splitStringByDelimiter(line, ' ');
+            // Add them to the logged URL's map
+            LOGGED_URLS.insert({ parts[0], parts[1] });
+        } else {
+            // There's always a new line at the end of the file, so there's nothing to see if the current line is blank
+            break;
+        }
+    }
+    
+    // Close the stream
+    inStream.close();
 }
 /*
     Parameters: Reference to a string
@@ -89,22 +112,8 @@ int main(int argc, char** argv) {
 
     // If the log file already exists...
     if(inStream.good()) {
-        std::string line;
-        std::vector<std::string> parts;
-        // While the the stream still has lines in the file to look at
-        while(!inStream.eof()) {
-            getline(inStream, line);
-            // If the current line isn't blank...
-            if(line != "") {
-                // Get the parts of the current line: original URL and proxy URL
-                parts = splitStringByDelimiter(line, ' ');
-                // Add them to the logged URL's map
-                LOGGED_URLS.insert({ parts[0], parts[1] });
-            } else {
-                // There's always a new line at the end of the file, so there's nothing to see if the current line is blank
-                break;
-            }
-        }
+        // Read the log file and populate the LOGGED_URLS map with its data
+        populateLoggedURLS(inStream);
     }
     // Open the log file for appending
     outStream.open("log.txt", std::ios::app);
@@ -114,9 +123,8 @@ int main(int argc, char** argv) {
         // Simply return the value of that key from the map
         std::cout << LOGGED_URLS.at(argv[1]) << std::endl;
 
-        // Close streams and return exit code 0
+        // Close stream and return exit code 0
         outStream.close();
-        inStream.close();
         return 0;
     }
 
@@ -128,8 +136,7 @@ int main(int argc, char** argv) {
     // Write the proxy URL to the console for the user to put into the web browser
     std::cout << proxyUrl << std::endl;
 
-    // Close streams and return exit code 0
+    // Close stream and return exit code 0
     outStream.close();
-    inStream.close();
     return 0;
 }
