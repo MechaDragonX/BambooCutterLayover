@@ -115,20 +115,28 @@ std::string genURL(std::string arg) {
 int main(int argc, char** argv) {
     if(argc < 2) {
         std::cout << "ERROR: That's too few arguments! You only need one argument!" << std::endl;
+// If the program is running on Windows (does not apply to Cygwin, MSYS2, WSL, etc.)
 #ifdef WINNT
+        // Give proper usage based on Command Prompt and Powershell
         std::cout << "Usage on Command Prompt: bamboo_cutter_layover.exe <link>" << std::endl;
-        std::cout << "Usage on PowerShell: .\\bamboo_cutter_layover.exe <link>" << std::endl;      
+        std::cout << "Usage on PowerShell: .\\bamboo_cutter_layover.exe <link>" << std::endl;
+// Otherwise, the user will most likely be on Unix
 #else
+        // Give proper usage based on Unix
         std::cout << "Usage: ./bamboo_cutter_layover.out <link>" << std::endl;
 #endif
         return 1;
     }
     if(argc > 2) {
         std::cout << "ERROR: That's too many arguments! You only need one argument!" << std::endl;
+// If the program is running on Windows (does not apply to Cygwin, MSYS2, WSL, etc.)
 #ifdef WINNT
+        // Give proper usage based on Command Prompt and Powershell
         std::cout << "Usage on Command Prompt: bamboo_cutter_layover.exe <link>" << std::endl;
-        std::cout << "Usage on PowerShell: .\\bamboo_cutter_layover.exe <link>" << std::endl;      
+        std::cout << "Usage on PowerShell: .\\bamboo_cutter_layover.exe <link>" << std::endl;
+// Otherwise, the user will most likely be on Unix
 #else
+        // Give proper usage based on Unix
         std::cout << "Usage: ./bamboo_cutter_layover.out <link>" << std::endl;
 #endif
         return 1;
