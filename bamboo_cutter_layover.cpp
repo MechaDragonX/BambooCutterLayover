@@ -113,8 +113,24 @@ std::string genURL(std::string arg) {
 }
 
 int main(int argc, char** argv) {
+    if(argc < 2) {
+        std::cout << "ERROR: That's too few arguments! You only need one argument!" << std::endl;
+#ifdef WINNT
+        std::cout << "Usage on Command Prompt: bamboo_cutter_layover.exe <link>" << std::endl;
+        std::cout << "Usage on PowerShell: .\\bamboo_cutter_layover.exe <link>" << std::endl;      
+#else
+        std::cout << "Usage: ./bamboo_cutter_layover.out <link>" << std::endl;
+#endif
+        return 1;
+    }
     if(argc > 2) {
         std::cout << "ERROR: That's too many arguments! You only need one argument!" << std::endl;
+#ifdef WINNT
+        std::cout << "Usage on Command Prompt: bamboo_cutter_layover.exe <link>" << std::endl;
+        std::cout << "Usage on PowerShell: .\\bamboo_cutter_layover.exe <link>" << std::endl;      
+#else
+        std::cout << "Usage: ./bamboo_cutter_layover.out <link>" << std::endl;
+#endif
         return 1;
     }
     
