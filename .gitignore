@@ -37,3 +37,6 @@
 
 # Log File
 log.txt
+
+# Compiled JS Files
+*.js

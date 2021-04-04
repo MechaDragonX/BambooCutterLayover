@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "target": "eSNEXT",
+        "lib": [ "DOM", "DOM.Iterable", "ESNext"] ,
+    },
+    "include": [ "index.ts" ]
+}
