@@ -12,12 +12,12 @@ Now you can simple visit a website to convert your URL's! That can be found [her
 ## What URL's are supported?
 - [mangadex.org](https://mangadex.org)
 - [nhentai.net](https://nhentai.net)
-    - The content on this site designed for users above the age of 18. I am not liable if you access this site illegally, due to being a minor or laws in your region regarding its content.
+    -The content on this site is designed for users above the age of 18. I am not liable if you access this site illegally, due to being a minor or laws in your region regarding its content.
 - [imgur.com](https://imgur.com)
 - [readmanhwa.com](https://readmanhwa.com)
 
 ## Is it functional?
-The program is functional but lacks some optimization. Please see the [releases page](https://github.com/MechaDragonX/BambooCutterLayover/releases) for compiled builds. Check the [issues](https://github.com/MechaDragonX/BambooCutterLayover/issues) tab for any issues.
+The program is functional but lacks some optimization. Please see the [releases page](https://github.com/MechaDragonX/BambooCutterLayover/releases) for compiled builds of the C++ version. Please see the [deployed site](https://bamboo-cutter-layover.vercel.app/) for deployed version of the site. Check the [issues](https://github.com/MechaDragonX/BambooCutterLayover/issues) tab for any issues.
 
 ## Coming Soon
 - [Toonily](https://toonily.com) is a site that's supported by default, [but I am unable to get the proxy to work manually](https://github.com/MechaDragonX/BambooCutterLayover/issues/1).
