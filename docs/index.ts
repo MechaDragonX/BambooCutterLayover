@@ -9,6 +9,7 @@ const allowedHostnames: Set<string> = new Set([
 const baseURL: string = 'https://guya.moe/proxy/';
 
 const errorBlock: HTMLElement = (<HTMLElement>document.querySelector('#error'));
+const errorMessage: HTMLElement = (<HTMLElement>document.querySelector('#errorMessage'));
 const input: HTMLInputElement = (<HTMLInputElement>document.querySelector('#inputField'));
 const processedText: HTMLInputElement = (<HTMLInputElement>document.querySelector('#processedText'));
 
@@ -23,10 +24,14 @@ function genURL() {
     } else if(input.value.substr(0, 8) == 'https://') {
         // Remove 'https://' from the provided URL
         primary = input.value.replace('https://', '');
+    } else {
+        primary = input.value;
     }
 
-    if(!allowedHostnames.has(primary.slice(0, primary.indexOf('/'))))
+    if(!allowedHostnames.has(primary.slice(0, primary.indexOf('/')))) {
         errorBlock.style.visibility = 'visible';
+        errorMessage.textContent = 'Something went wrong! You may have misspelled a supported URL, inputted an unsupported URL, or didn\'t write a URL!';
+    }
 
     // Get a vector of parts of the URL
     let parts: Array<string> = primary.split('/');
