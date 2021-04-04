@@ -49,4 +49,6 @@ function genURL() {
     // Set the output field to the result
     processedText.value = result;
 }
-
+function closeErrorMessage() {
+    errorBlock.style.visibility = 'hidden';
+}
