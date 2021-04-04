@@ -1,7 +1,7 @@
 # Bamboo Cutter Layover
 
 ## What is Bamboo Cutter Layover?
-Bamboo Cutter Layover is both a simple command line program written in C++, and a [basic website](https://bamboo-cutter-layover.vercel.app/) that takes a URL from a east Asian comic aggregation site (colloquialy a "manga reader" as most of the content on those websites are Japanese comics), and crates a redirect link to [guya.moe](https://guya.moe), a robust comic book reader that focuses on a [specific series](https://en.wikipedia.org/wiki/Kaguya-sama:_Love_Is_War), using its proxy feature.
+Bamboo Cutter Layover is both a simple command line program written in C++, and a [basic website](https://bamboo-cutter-layover.vercel.app/) that takes a URL from a east Asian comic aggregation site (colloquialy a "manga reader" as most of the content on those websites are Japanese comics), and creates a redirect link to [guya.moe](https://guya.moe), a robust comic book reader that focuses on a [specific series](https://en.wikipedia.org/wiki/Kaguya-sama:_Love_Is_War), using its proxy feature.
 
 ## How do I run it?
 ### C++ Command Line Program
