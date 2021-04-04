@@ -4,8 +4,53 @@
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css' />
     <title id='title'>Bamboo Cutter Layover</title>
 </head>
+<style>
+    p {
+        font-size: 20;
+    }
+    li {
+        font-size: 20;
+    }
+</style>
 <body>
     <div class='jumbotron'>
+        <div id='info'>
+            <hl class='display-4'>Welcome to Bamboo Cutter Layover!</hl>
+            <br><br>
+            <p>
+                Bamboo Cutter Layover a basic website that takes a URL from a manga reader, and crates a redirect link to <a href='https://guya.moe/'>guya.moe</a>, a robust comic book reader that focuses on <a href='https://en.wikipedia.org/wiki/Kaguya-sama:_Love_Is_War'><i>Kaguya-sama: Love is War</i></a>, using its proxy feature.<br>
+            </p>
+            <h3>What does this mean!?</h3>
+            <p>
+                It just means that you can read your favorite manga using the reader that <a href='https://guya.moe/'>guya.moe</a> has, which I personally think is the best comic book reader due to a number of cool features.<br>
+            </p>
+            <h3>How do I use it?</h3>
+            <p>
+                Take a link from any one of the supported websites:
+            </p>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href='https://mangadex.org/'>mangadex.org</a>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href='https://nhentai.net/'>nhentai.net</a>
+                    <span class="badge badge-warning">Warning: NSFW Content</span>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        The content on this site designed for users above the age of 18. I am not liable if you access this site illegally, due to being a minor or laws in your region regarding its content.
+                    </li>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href='https://imgur.com/'>imgur.com</a>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href='https://readmanhwa.com/'>readmanhwa.com</a>
+                </li>
+              </ul>
+        </div>
+        <p>
+            and plop it into the first textbox. Once you press "Enter", a proxy URL will be generated in the bottom textbox. Copy that URL and paste it into your browser, and now you can enjoy reading your manga.<br>
+        </p>
+        <h3>Happy reading!</h3><br>
         <div class='alert alert-dismissible alert-danger' style='visibility: hidden;' id='error'>
             <button type='button' class='close' data-dismiss='alert' onclick='closeErrorMessage()'>&times;</button>
             <h4>Oh Snap!</h4>
