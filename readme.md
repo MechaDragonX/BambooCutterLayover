@@ -12,7 +12,7 @@ Now you can simple visit a website to convert your URL's! That can be found [her
 ## What URL's are supported?
 - [mangadex.org](https://mangadex.org)
 - [nhentai.net](https://nhentai.net)
-    - This is site is designed for users above the age of 18. I am not liable if you access this site illegally, due to being a minor or laws in your region regarding its content.
+    - The content on this site designed for users above the age of 18. I am not liable if you access this site illegally, due to being a minor or laws in your region regarding its content.
 - [imgur.com](https://imgur.com)
 - [readmanhwa.com](https://readmanhwa.com)
 
