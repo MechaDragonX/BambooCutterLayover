@@ -8,8 +8,8 @@ const allowedHostnames: Set<string> = new Set([
 ]);
 const baseURL: string = 'https://guya.moe/proxy/';
 
-const errorBlock: HTMLElement = (<HTMLElement>document.querySelector('#error'));
-const errorMessage: HTMLElement = (<HTMLElement>document.querySelector('#errorMessage'));
+const errorBlock: HTMLDivElement = (<HTMLDivElement>document.querySelector('#error'));
+const errorMessage: HTMLParagraphElement = (<HTMLParagraphElement>document.querySelector('#errorMessage'));
 const input: HTMLInputElement = (<HTMLInputElement>document.querySelector('#inputField'));
 const processedText: HTMLInputElement = (<HTMLInputElement>document.querySelector('#processedText'));
 
