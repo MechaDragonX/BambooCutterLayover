@@ -24,11 +24,11 @@ function genURL() {
         primary = input.value.replace("https://", "");
     }
 
-    // Get a vector of parts of the URL
-    let parts: Array<string> = primary.split('/');
-    if(!allowedHostnames.has(parts[0]))
+    if(!allowedHostnames.has(primary.slice(0, primary.indexOf('/'))))
         console.log("ERROR: That URL is not supported!");
 
+    // Get a vector of parts of the URL
+    let parts: Array<string> = primary.split('/');
     let result: string;
     // Create redirect URL's based on the hostname
     if(parts[0] == "mangadex.org") {
