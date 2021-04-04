@@ -1,10 +1,13 @@
 # Bamboo Cutter Layover
 
 ## What is Bamboo Cutter Layover?
-Bamboo Cutter Layover is a simple CLI program written in C++ that takes a URL from a east Asian comic aggregation site (colloquialy a "manga reader" as most of the content on those websites are Japanese comics), and crates a redirect link to [guya.moe](https://guya.moe), a robust comic book reader that focuses on a [specific series](https://en.wikipedia.org/wiki/Kaguya-sama:_Love_Is_War), using its proxy feature.
+Bamboo Cutter Layover is both a simple command line program written in C++, and a [basic website](https://bamboo-cutter-layover.vercel.app/) that takes a URL from a east Asian comic aggregation site (colloquialy a "manga reader" as most of the content on those websites are Japanese comics), and crates a redirect link to [guya.moe](https://guya.moe), a robust comic book reader that focuses on a [specific series](https://en.wikipedia.org/wiki/Kaguya-sama:_Love_Is_War), using its proxy feature.
 
 ## How do I run it?
+### C++ Command Line Program
 You can either compile from source or download the latest [releases](https://github.com/MechaDragonX/BambooCutterLayover/releases). Windows users that use Windows Subsystem for Linux, Cygwin, or MSYS2 can download the Unix builds, as these builds will work natively.
+### Website
+Now you can simple visit a website to convert your URL's! That can be found [here](https://bamboo-cutter-layover.vercel.app/). Since it is simply a HTML file and client side JS, once you go to the website, you don't need an internet connection to interact with it! Nothing gets pinged to a server whatsoever.
 
 ## What URL's are supported?
 - [mangadex.org](https://mangadex.org)
@@ -17,9 +20,6 @@ You can either compile from source or download the latest [releases](https://git
 The program is functional but lacks some optimization. Please see the [releases page](https://github.com/MechaDragonX/BambooCutterLayover/releases) for compiled builds. Check the [issues](https://github.com/MechaDragonX/BambooCutterLayover/issues) tab for any issues.
 
 ## Coming Soon
-- A web or mobile version so people don't need to need to have access to a terminal to use this.
-    - The use of C++ was for my own practice, and since this *can* be done solely from the terminal.
-    - I might make a GUI version in C++ to practice that, but pragmatically speaking, the most useful is a website or mobile app.
 - [Toonily](https://toonily.com) is a site that's supported by default, [but I am unable to get the proxy to work manually](https://github.com/MechaDragonX/BambooCutterLayover/issues/1).
 - Add support for sites the use the [FoOlSlide reader](https://foolcode.github.io/FoOlSlide/), since [guya.moe](https://guya.moe) supports them.
 
