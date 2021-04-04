@@ -7,7 +7,6 @@ const allowedHostnames: Set<string> = new Set([
     // "toonily.com"
 ]);
 const baseURL: string = "https://guya.moe/proxy/";
-const regex: RegExp = new RegExp(/^.+?(?=\/)/);
 
 const input: HTMLInputElement = (<HTMLInputElement>document.querySelector('#inputField'));
 const processedText: HTMLInputElement = (<HTMLInputElement>document.querySelector('#processedText'));
@@ -25,11 +24,11 @@ function genURL() {
         primary = input.value.replace("https://", "");
     }
 
-    if(!allowedHostnames.has(input.value.match(regex)[0]))
-        console.log("ERROR: That URL is not supported!");
-
     // Get a vector of parts of the URL
     let parts: Array<string> = primary.split('/');
+    if(!allowedHostnames.has(parts[0]))
+        console.log("ERROR: That URL is not supported!");
+
     let result: string;
     // Create redirect URL's based on the hostname
     if(parts[0] == "mangadex.org") {
