@@ -8,6 +8,7 @@ const allowedHostnames: Set<string> = new Set([
 ]);
 const baseURL: string = 'https://guya.moe/proxy/';
 
+const errorBlock: HTMLElement = (<HTMLElement>document.querySelector('#error'))
 const input: HTMLInputElement = (<HTMLInputElement>document.querySelector('#inputField'));
 const processedText: HTMLInputElement = (<HTMLInputElement>document.querySelector('#processedText'));
 
@@ -25,7 +26,7 @@ function genURL() {
     }
 
     if(!allowedHostnames.has(primary.slice(0, primary.indexOf('/'))))
-        console.log('ERROR: That URL is not supported!');
+        errorBlock.style.visibility = 'visible';
 
     // Get a vector of parts of the URL
     let parts: Array<string> = primary.split('/');
