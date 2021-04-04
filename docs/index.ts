@@ -26,7 +26,7 @@ function genURL() {
         primary = input.value.replace('https://', '');
     else if(input.value.indexOf('/') == -1) {
         errorBlock.style.visibility = 'visible';
-        errorMessage.textContent = 'The URL has no slashes! Make sure to paste the URL to a specific comic or image gallery, not the homepage of the site!';
+        errorMessage.textContent = 'That URL has no slashes! Make sure to paste the URL to a specific comic or image gallery, not the homepage of the site!';
         return;
     }
     else
