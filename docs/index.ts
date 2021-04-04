@@ -18,19 +18,24 @@ input.addEventListener('change', genURL);
 function genURL() {
     // Primary portion of the URL
     let primary: string;
-    if(input.value.slice(0, 7) == 'http://') {
+    if(input.value.slice(0, 7) == 'http://')
         // Remove 'http://' from the provided URL
         primary = input.value.replace('http://', '');
-    } else if(input.value.substr(0, 8) == 'https://') {
+    else if(input.value.slice(0, 8) == 'https://')
         // Remove 'https://' from the provided URL
         primary = input.value.replace('https://', '');
-    } else {
-        primary = input.value;
+    else if(input.value.indexOf('/') == -1) {
+        errorBlock.style.visibility = 'visible';
+        errorMessage.textContent = 'The URL has no slashes! Make sure to paste the URL to a specific comic or image gallery, not the homepage of the site!';
+        return;
     }
+    else
+        primary = input.value;
 
     if(!allowedHostnames.has(primary.slice(0, primary.indexOf('/')))) {
         errorBlock.style.visibility = 'visible';
-        errorMessage.textContent = 'Something went wrong! You may have misspelled a supported URL, inputted an unsupported URL, or didn\'t write a URL!';
+        errorMessage.textContent = 'That URL is is not supported! You may have misspelled a supported URL or inputted an unsupported URL';
+        return;
     }
 
     // Get a vector of parts of the URL
